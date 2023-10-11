@@ -4,9 +4,9 @@
   <DefaultSchema>dbo</DefaultSchema>
   <DefaultUser>dbo</DefaultUser>
   <DefaultFilegroup>PRIMARY</DefaultFilegroup>
-  <DatabaseVersion>16</DatabaseVersion>
-  <ServerVersion>16.0.1000.6</ServerVersion>
-  <CompatibilityLevel>160</CompatibilityLevel>
+  <DatabaseVersion>15</DatabaseVersion>
+  <ServerVersion>15.0.2000.5</ServerVersion>
+  <CompatibilityLevel>150</CompatibilityLevel>
   <EngineEdition>Express</EngineEdition>
   <IsAzure>False</IsAzure>
   <ScriptFolderType>Default</ScriptFolderType>
