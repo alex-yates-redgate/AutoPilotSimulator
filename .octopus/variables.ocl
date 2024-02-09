@@ -1,0 +1,3 @@
+variable "RGCLONE_API_ENDPOINT" {
+    value "https://clone-internal.red-gate.com:8132/" {}
+}
