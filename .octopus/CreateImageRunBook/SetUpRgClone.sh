@@ -9,7 +9,8 @@ curl $RGCLONE_DOWNLOAD_URL | tar xz
 echo "Running ls to see if rgclone is there"
 ls
 echo "Exporting RGCLONE_API_ENDPOINT"
-export RGCLONE_API_ENDPOINT=RGCLONE_API_ENDPOINT
+export RGCLONE_API_ENDPOINT=$RGCLONE_API_ENDPOINT
+echo "RGCLONE_API_ENDPOINT is: $RGCLONE_API_ENDPOINT"
 echo "Attempting to use rgclone"
 ./rgclone version
 ./rgclone get all
