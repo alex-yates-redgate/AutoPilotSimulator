@@ -6,16 +6,9 @@ RGCLONE_DOWNLOAD_URL+="cloning-api/download/cli/linux-amd64"
 echo "RGCLONE_API_ENDPOINT is: $RGCLONE_API_ENDPOINT"
 echo "RGCLONE_DOWNLOAD_URL is: $RGCLONE_DOWNLOAD_URL"
 
-echo "Downloading rgclone from $RGCLONE_DOWNLOAD_URL"
+echo "Downloading and unzipping rgclone from $RGCLONE_DOWNLOAD_URL"
 
-curl $RGCLONE_DOWNLOAD_URL 
-
-echo "Running ls"
-
-ls
-
-echo "Unzipping rgclone"
-tar xz rgclone.tar.gz
+curl $RGCLONE_DOWNLOAD_URL | tar xz
 
 echo "Running ls"
 
