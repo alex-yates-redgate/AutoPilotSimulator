@@ -51,8 +51,8 @@ Add-Type -assembly "System.IO.Compression.Filesystem";
 [IO.Compression.Zipfile]::ExtractToDirectory($zipFile, $rgCloneLocation);
 
 Write-Output "  Configuring rgclone endpoint"
-& setx RGCLONE_API_ENDPOINT $rgCloneEndpoint
-& setx RGCLONE_ACCESS_TOKEN $rgCloneAccessToken
+& set RGCLONE_API_ENDPOINT=$rgCloneEndpoint
+& set RGCLONE_ACCESS_TOKEN=$rgCloneAccessToken
 
 Write-Output ""
 Write-Output "Updating PATH system variable:"
