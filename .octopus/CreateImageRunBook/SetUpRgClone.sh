@@ -6,7 +6,7 @@ echo "Downloading and unzipping rgclone from $RGCLONE_DOWNLOAD_URL"
 curl $RGCLONE_DOWNLOAD_URL | tar xz
 echo "rgclone version is:"
 ./rgclone version
-echo "Available rgclone images are:"
-./rgclone get di
-echo "Creating new Widget data image:"
-./rgclone create di -f ./Widget.yaml
+# echo "Available rgclone images are:"
+# ./rgclone get di
+# echo "Creating new Widget data image:"
+# ./rgclone create di -f ./Widget.yaml
