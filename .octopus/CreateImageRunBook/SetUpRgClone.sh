@@ -10,9 +10,12 @@ curl $RGCLONE_DOWNLOAD_URL | tar xz
 # undoing the stdout hack above
 echo "##octopus[stderr-default]"
 
+mkdir ~/redgate -p # cretes aredgate dir (if not exists)
+mv ./rgclone ~/redgate/rgclone -f # copies rgclone to persistent dir, and overwrites existing file
+
 echo "rgclone version is:"
-./rgclone version
+~/redgate/rgclone version
 # echo "Available rgclone images are:"
-# ./rgclone get di
+# ~/redgate/rgclone get di
 # echo "Creating new Widget data image:"
-# ./rgclone create di -f ./Widget.yaml
+# ~/redgate/rgclone create di -f ./Widget.yaml
