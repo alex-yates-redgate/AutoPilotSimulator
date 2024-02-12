@@ -7,7 +7,7 @@ tags:
 - purpose_octopusdemo
 - #{Octopus.RunbookRun.Id}
 - #{Octopus.Web.ServerUri}/#{Octopus.Web.RunbookRunLink}
-lifetime: 14d
+lifetime: 336h
 backups:
   - path: mssql/Widget/WidgetProduction.bak
 preScript: |
