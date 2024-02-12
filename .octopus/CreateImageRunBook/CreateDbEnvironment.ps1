@@ -1,5 +1,4 @@
-Set-Location ~/redgate
-$dcInfo = (rgclone create dc -i Widget -o json) | ConvertFrom-Json
+$dcInfo = (~/redgate/rgclone create dc -i Widget -o json) | ConvertFrom-Json
 
 $jdbc = $dcInfo.jdbcConnectionString
 
