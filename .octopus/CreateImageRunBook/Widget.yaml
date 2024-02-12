@@ -2,6 +2,12 @@ sourceType: Backup
 name: Widget
 engine: mssql
 version: 2022
+tags:
+- createdby_alexyates
+- purpose_octopusdemo
+- #{Octopus.RunbookRun.Id}
+- #{Octopus.Web.ServerUri}/#{Octopus.Web.RunbookRunLink}
+lifetime: 14d
 backups:
   - path: mssql/Widget/WidgetProduction.bak
 preScript: |
@@ -18,10 +24,10 @@ postScript: |
   alter server role [sysadmin] add member [Redgate];
   go
 
-  --use NewWorldDB
-  --create user [Redgate] for login [Redgate]
-  --go
+  use WidgetProduction
+  create user [Redgate] for login [Redgate]
+  go
 
-  --use NewWorldDB_Shadow
-  --create user [Redgate] for login [Redgate]
-  --go
+  use Widget_Shadow
+  create user [Redgate] for login [Redgate]
+  go
