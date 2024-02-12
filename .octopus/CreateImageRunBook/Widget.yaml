@@ -1,0 +1,27 @@
+sourceType: Backup
+name: Widget
+engine: mssql
+version: 2022
+backups:
+  - path: mssql/Widget/WidgetProduction.bak
+preScript: |
+  CREATE DATABASE [Widget_Shadow]
+postScript: |
+  create login [Redgate]
+  with password = N'Redg@te1'
+    , default_database = [master]
+    , default_language = [us_english]
+    , check_expiration = off
+    , check_policy = off;
+  go
+
+  alter server role [sysadmin] add member [Redgate];
+  go
+
+  --use NewWorldDB
+  --create user [Redgate] for login [Redgate]
+  --go
+
+  --use NewWorldDB_Shadow
+  --create user [Redgate] for login [Redgate]
+  --go
