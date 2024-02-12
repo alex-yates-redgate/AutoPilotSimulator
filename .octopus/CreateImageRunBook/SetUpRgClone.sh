@@ -8,4 +8,5 @@ echo "rgclone version is:"
 ./rgclone version
 echo "Available rgclone images are:"
 ./rgclone get di
+echo "Creating new Widget data image:"
 ./rgclone create di -f ./.octopus/CreateImageRunbook/Widget.yaml
