@@ -5,8 +5,8 @@ version: 2022
 tags:
 - createdby_alexyates
 - purpose_octopusdemo
-- #{Octopus.RunbookRun.Id}
-- #{Octopus.Web.ServerUri}/#{Octopus.Web.RunbookRunLink}
+- #{Octopus.RunbookRun.Id | ToLower | Replace "-" "_" }
+# - #{Octopus.Web.ServerUri}/#{Octopus.Web.RunbookRunLink}
 lifetime: 336h
 backups:
   - path: mssql/Widget/WidgetProduction.bak
