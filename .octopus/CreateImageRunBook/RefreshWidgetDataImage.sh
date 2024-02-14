@@ -5,10 +5,10 @@ echo "Creating new Widget data image:"
 ~/redgate/rgclone create di -f ./Widget.yaml --name Widget_New
 
 echo "Deleting previous Widget data image:"
-#~/redgate/rgclone delete di -f ./Widget_Previous.yaml
+~/redgate/rgclone delete di -f ./Widget_Previous.yaml
 
 echo "Renaming current Widget data image to Widget_Previous:"
-#~/redgate/rgclone update di Widget --name Widget_Previous
+~/redgate/rgclone update di Widget --name Widget_Previous
 
 echo "Renaming new Widget data image to Widget:"
 ~/redgate/rgclone update di Widget_New --name Widget
