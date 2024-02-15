@@ -15,7 +15,3 @@ mv ./rgclone ~/redgate/rgclone -f # copies rgclone to persistent dir, and overwr
 
 echo "rgclone version is:"
 ~/redgate/rgclone version
-# echo "Available rgclone images are:"
-# ~/redgate/rgclone get di
-# echo "Creating new Widget data image:"
-# ~/redgate/rgclone create di -f ./Widget.yaml
