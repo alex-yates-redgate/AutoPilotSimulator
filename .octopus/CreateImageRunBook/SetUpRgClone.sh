@@ -19,10 +19,14 @@ echo "rgclone version is:"
 echo "Installing flyway"
 wget -qO- https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/8.5.13/flyway-commandline-8.5.13-linux-x64.tar.gz | tar xvz #&& sudo ln -s `pwd`/flyway-8.5.13/flyway /usr/local/bin 
 
-dir
+echo "Listing files in current dir"
+ls -la
+
+echo "Listing files in flyway dir"
+ls -la flyway-8.5.13
 
 echo "Copying flyway to persistent dir"
-mv ./flyway-8.5.13 ~/redgate/flyway -f # copies rgclone to persistent dir, and overwrites existing file
+mv ./flyway-8.5.13/flyway ~/redgate/flyway -f # copies rgclone to persistent dir, and overwrites existing file
 
 echo "Trying flyway version"
 ./redgate/flyway version
