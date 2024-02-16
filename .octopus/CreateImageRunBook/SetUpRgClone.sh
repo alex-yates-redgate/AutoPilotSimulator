@@ -17,29 +17,11 @@ mv ./rgclone ~/redgate/rgclone -f # copies rgclone to persistent dir, and overwr
 echo "rgclone version is:"
 ~/redgate/rgclone version
 
-echo "Installing flyway"
-wget -qO- https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/8.5.13/flyway-commandline-8.5.13-linux-x64.tar.gz | tar xvz #&& sudo ln -s `pwd`/flyway-8.5.13/flyway /usr/local/bin 
-
-echo "Listing files in current dir"
-ls -la
-
-echo "Listing files in flyway dir"
-ls -la flyway-8.5.13
-
-echo "Listing files in redgate dir"
-ls -la ~/redgate
-
-echo "Listing files in redgate/rgclone dir"
-ls -la ~/redgate/rgclone
-
-echo "Listing files in redgate/flyway dir"
-ls -la ~/redgate/flyway
+echo "Downloading and extracting flyway"
+wget -qO- https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/8.5.13/flyway-commandline-8.5.13-linux-x64.tar.gz | tar xvz
 
 echo "Copying flyway to persistent dir"
-mv "./flyway-8.5.13/flyway" ~/redgate -f # copies rgclone to persistent dir, and overwrites existing file
+mv "./flyway-8.5.13/flyway" ~/redgate -f # copies flyway to persistent dir, and overwrites existing file
 
-echo "Listing files in redgate/flyway dir"
-ls -la ~/redgate/flyway
-
-echo "Trying flyway version"
+echo "Attempting flyway version"
 ~/redgate/flyway version # Currently fails because of missing Java dependency
