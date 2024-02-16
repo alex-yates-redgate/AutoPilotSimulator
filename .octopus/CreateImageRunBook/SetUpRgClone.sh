@@ -22,7 +22,7 @@ wget -qO- https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/8.5.13/
 dir
 
 echo "Copying flyway to persistent dir"
-mv `pwd`/flyway-8.5.13/flyway ~/redgate/flyway -f # copies rgclone to persistent dir, and overwrites existing file
+mv ./flyway-8.5.13 ~/redgate/flyway -f # copies rgclone to persistent dir, and overwrites existing file
 
 echo "Trying flyway version"
 ./redgate/flyway version
