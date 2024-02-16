@@ -25,8 +25,14 @@ ls -la
 echo "Listing files in flyway dir"
 ls -la flyway-8.5.13
 
+echo "Listing files in redgate dir"
+ls -la ~/redgate
+
+echo "Listing files in redgate/rgclone dir"
+ls -la ~/redgate/rgclone
+
 echo "Copying flyway to persistent dir"
-mv ./flyway-8.5.13/flyway ~/redgate/flyway -f # copies rgclone to persistent dir, and overwrites existing file
+mv ./flyway-8.5.13/flyway.cmd ~/redgate -f # copies rgclone to persistent dir, and overwrites existing file
 
 echo "Trying flyway version"
 ./redgate/flyway version
