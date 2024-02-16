@@ -10,7 +10,7 @@ curl $RGCLONE_DOWNLOAD_URL | tar xz
 # undoing the stdout hack above
 echo "##octopus[stderr-default]"
 
-rmdir ~/redgate -f # removes redgate dir (if exists)
+rm -r ~/redgate -f # removes redgate dir (if exists)
 mkdir ~/redgate -p # cretes a redgate dir (if not exists)
 mv ./rgclone ~/redgate/rgclone -f # copies rgclone to persistent dir, and overwrites existing file
 
