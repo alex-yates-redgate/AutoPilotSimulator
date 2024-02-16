@@ -42,4 +42,4 @@ echo "Listing files in redgate/flyway dir"
 ls -la ~/redgate/flyway
 
 echo "Trying flyway version"
-~/redgate/flyway version
+~/redgate/flyway version # Currently fails because of missing Java dependency
