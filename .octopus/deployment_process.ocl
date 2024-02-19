@@ -1,32 +1,10 @@
-step "run-a-script" {
-    name = "Deploy database with flyway"
-
-    action {
-        action_type = "Octopus.Script"
-        is_disabled = true
-        properties = {
-            Octopus.Action.Script.ScriptBody = "flyway version"
-            Octopus.Action.Script.ScriptSource = "Inline"
-            Octopus.Action.Script.Syntax = "PowerShell"
-            OctopusUseBundledTooling = "False"
-        }
-        worker_pool = "hosted-ubuntu"
-
-        container {
-            feed = "dockerhub"
-            image = "octopuslabs/flyway-workertools:9.21.2-ubuntu.2204"
-        }
-    }
-}
-
 step "flyway-database-migrations" {
     name = "Flyway Database Migrations"
 
     action {
         properties = {
             Flyway.Authentication.Method = "usernamepassword"
-            Flyway.Command.BaseLineOnMigrate = "true"
-            Flyway.Command.BaselineVersion = "002.20230703112421"
+            Flyway.Command.BaseLineOnMigrate = "false"
             Flyway.Command.FailOnDrift = "true"
             Flyway.Command.Locations = "filesystem:#{Octopus.Action.Package[Flyway.Package.Value].ExtractedPath}/migrations"
             Flyway.Command.OutOfOrder = "false"
