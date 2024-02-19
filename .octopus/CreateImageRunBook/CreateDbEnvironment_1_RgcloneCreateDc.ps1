@@ -5,7 +5,8 @@
 $containerName = "Widget-" + $OctopusParameters["Octopus.Environment.Name"]
 # redirect output to stdout to avoid errors/warnings
 echo "##octopus[stderr-progress]"
-~/redgate/rgclone update dc $containerName -n "$containerName-previous" -t 10m
+~/redgate/rgclone delete dc "$containerName-previous" # If there is already a 'previous' container, delete it
+~/redgate/rgclone update dc $containerName -n "$containerName-previous" -t 10m # Rename current container to previous and set 10m lifetime
 # undoing the stdout hack above
 echo "##octopus[stderr-default]"
 
