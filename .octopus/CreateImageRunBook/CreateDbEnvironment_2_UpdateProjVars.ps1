@@ -3,7 +3,9 @@ octopus config set url $OctopusParameters["Octopus.Web.ServerUri"]
 octopus config set apikey $OctopusParameters["OCTOPUS_API_KEY"]
 
 # Create the database environment, and save the JDBC connection string
-$jdbc = $OctopusParameters["Octopus.Action[Create rgclone data container].Output.jdbcConnnectionString"]
+$jdbc = $OctopusParameters["Octopus.Action[Create rgclone data container].Output.jdbcConnectionString"]
+
+Write-Output "jdbc is $jdbc"
 
 # Get the variableID from the API
 Write-Host "Getting variable ID from the Octopus API"
