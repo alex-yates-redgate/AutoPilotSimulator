@@ -31,6 +31,7 @@ step "flyway-database-migrations" {
             Flyway.Command.Target = "latest"
             Flyway.Command.Value = "migrate"
             Flyway.Executable.Path = "/flyway/flyway"
+            Flyway.License.Key = "#{FLYWAY.LICENCE}"
             Flyway.Package.Value = "{\"PackageId\":\"alex-yates-redgate/AutoPilotSimulator\",\"FeedId\":\"github\"}"
             Flyway.Target.Url = "#{DB_CONNECTION_STRING};databaseName=Widget"
             Octopus.Action.Template.Id = "ActionTemplates-21"
