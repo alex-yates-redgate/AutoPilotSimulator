@@ -3,6 +3,7 @@ step "run-a-script" {
 
     action {
         action_type = "Octopus.Script"
+        is_disabled = true
         properties = {
             Octopus.Action.Script.ScriptBody = "flyway version"
             Octopus.Action.Script.ScriptSource = "Inline"
