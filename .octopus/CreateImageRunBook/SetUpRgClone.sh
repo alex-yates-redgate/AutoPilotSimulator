@@ -17,6 +17,9 @@ mv ./rgclone ~/redgate/rgclone -f # copies rgclone to persistent dir, and overwr
 echo "rgclone version is:"
 ~/redgate/rgclone version
 
+echo "Installing Java 17"
+sudo apt install openjdk-17-jdk -y
+
 echo "Downloading and extracting flyway"
 wget -qO- https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/8.5.13/flyway-commandline-8.5.13-linux-x64.tar.gz | tar xvz
 
