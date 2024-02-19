@@ -17,3 +17,41 @@ step "run-a-script" {
         }
     }
 }
+
+step "flyway-database-migrations" {
+    name = "Flyway Database Migrations"
+
+    action {
+        properties = {
+            Flyway.Authentication.Method = "usernamepassword"
+            Flyway.Command.BaseLineOnMigrate = "false"
+            Flyway.Command.FailOnDrift = "true"
+            Flyway.Command.OutOfOrder = "false"
+            Flyway.Command.SkipExecutingMigrations = "false"
+            Flyway.Command.Target = "latest"
+            Flyway.Command.Value = "migrate"
+            Flyway.Package.Value = "{\"PackageId\":\"alex-yates-redgate/AutoPilotSimulator\",\"FeedId\":\"dockerhub\"}"
+            Flyway.Target.Url = "#{DB_CONNECTION_STRING};databaseName=Widget"
+            Octopus.Action.Template.Id = "ActionTemplates-21"
+            Octopus.Action.Template.Version = "13"
+            OctopusUseBundledTooling = "False"
+        }
+        worker_pool = "hosted-ubuntu"
+
+        container {
+            feed = "dockerhub"
+            image = "octopuslabs/flyway-workertools:9.21.2-ubuntu.2204"
+        }
+
+        packages "Flyway.Package.Value" {
+            acquisition_location = "Server"
+            feed = "dockerhub"
+            package_id = "alex-yates-redgate/AutoPilotSimulator"
+            properties = {
+                Extract = "True"
+                PackageParameterName = "Flyway.Package.Value"
+                SelectionMode = "deferred"
+            }
+        }
+    }
+}
