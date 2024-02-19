@@ -25,8 +25,7 @@ step "flyway-database-migrations" {
     action {
         properties = {
             Flyway.Authentication.Method = "usernamepassword"
-            Flyway.Command.BaseLineOnMigrate = "true"
-            Flyway.Command.BaselineVersion = "002.20230703112421"
+            Flyway.Command.BaseLineOnMigrate = "false"
             Flyway.Command.FailOnDrift = "true"
             Flyway.Command.Locations = "filesystem:#{Octopus.Action.Package[Flyway.Package.Value].ExtractedPath}/migrations"
             Flyway.Command.OutOfOrder = "false"
