@@ -15,7 +15,5 @@ $dcInfo = (~/redgate/rgclone create dc -i Widget --name "$containerName" -t 3h -
 $jdbc = $dcInfo.jdbcConnectionString
 $jdbcWithDbName = $jdbc + "DatabaseName=WidgetProduction"
 
-Write-Output "JDBC is: $jdbcWithDbName"
-
 # Set the JDBC connection string as a sensitive variable
 Set-OctopusVariable -Name jdbcConnectionString -Value "$jdbcWithDbName" -Sensitive
