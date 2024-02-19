@@ -1,3 +1,15 @@
 variable "RGCLONE_API_ENDPOINT" {
     value "https://clone-internal.red-gate.com:8132/" {}
 }
+
+variable "DB_CONNECTION_STRING" {
+    value "" {
+        description = ""
+        environment = ["development"]
+    }
+
+    value "" {
+        description = ""
+        environment = ["staging"]
+    }
+}
