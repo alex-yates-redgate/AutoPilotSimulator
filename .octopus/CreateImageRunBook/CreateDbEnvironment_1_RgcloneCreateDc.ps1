@@ -10,8 +10,8 @@ echo "##octopus[stderr-progress]"
 echo "##octopus[stderr-default]"
 
 # Create the database environment, and save the JDBC connection string
-$dcInfo = (~/redgate/rgclone create dc -i Widget --name "$containerName" -t 1h -o json) | ConvertFrom-Json
+$dcInfo = (~/redgate/rgclone create dc -i Widget --name "$containerName" -t 3h -o json) | ConvertFrom-Json
 $jdbc = $dcInfo.jdbcConnectionString
-$jdbcWithDbName = $jdbc + "databaseName=WidgetProduction"
+$jdbcWithDbName = $jdbc + "DatabaseName=WidgetProduction"
 
 Set-OctopusVariable -Name jdbcConnectionString -Value "$jdbcWithDbName" -Sensitive
