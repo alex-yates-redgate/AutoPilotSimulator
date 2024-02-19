@@ -1,5 +1,5 @@
 step "run-a-script" {
-    name = "Run a Script"
+    name = "Deploy database with flyway"
 
     action {
         action_type = "Octopus.Script"
