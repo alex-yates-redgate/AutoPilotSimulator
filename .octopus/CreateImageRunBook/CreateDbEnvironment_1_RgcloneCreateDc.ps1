@@ -5,7 +5,7 @@
 $containerName = "Widget-" + $OctopusParameters["Octopus.Environment.Name"]
 # redirect output to stdout to avoid errors/warnings
 echo "##octopus[stderr-progress]"
-~/redgate/rgclone update dc $containerName -n "$containerName-previous" -t 30m
+~/redgate/rgclone update dc $containerName -n "$containerName-previous" -t 10m
 # undoing the stdout hack above
 echo "##octopus[stderr-default]"
 
