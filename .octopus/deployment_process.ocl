@@ -30,7 +30,7 @@ step "flyway-database-migrations" {
             Flyway.Command.SkipExecutingMigrations = "false"
             Flyway.Command.Target = "latest"
             Flyway.Command.Value = "migrate"
-            Flyway.Package.Value = "{\"PackageId\":\"alex-yates-redgate/AutoPilotSimulator\",\"FeedId\":\"dockerhub\"}"
+            Flyway.Package.Value = "{\"PackageId\":\"alex-yates-redgate/AutoPilotSimulator\",\"FeedId\":\"github\"}"
             Flyway.Target.Url = "#{DB_CONNECTION_STRING};databaseName=Widget"
             Octopus.Action.Template.Id = "ActionTemplates-21"
             Octopus.Action.Template.Version = "13"
@@ -45,7 +45,7 @@ step "flyway-database-migrations" {
 
         packages "Flyway.Package.Value" {
             acquisition_location = "Server"
-            feed = "dockerhub"
+            feed = "github"
             package_id = "alex-yates-redgate/AutoPilotSimulator"
             properties = {
                 Extract = "True"
