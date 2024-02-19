@@ -3,13 +3,13 @@ variable "RGCLONE_API_ENDPOINT" {
 }
 
 variable "DB_CONNECTION_STRING" {
-    value "jdbc:sqlserver://clone-internal.red-gate.com:32793;user=sa;password=PJEhQaKN0fVM3E9a;trustServerCertificate=true;databaseName=WidgetProduction" {
-        description = ""
-        environment = ["development"]
-    }
-
     value "jdbc:sqlserver://clone-internal.red-gate.com:32869;user=sa;password=UVjln78biBsyugdr;trustServerCertificate=true;databaseName=WidgetProduction" {
         description = ""
         environment = ["staging"]
+    }
+
+    value "jdbc:sqlserver://clone-internal.red-gate.com:32904;user=sa;password=7xeX9TIImm2k7p04;trustServerCertificate=true;databaseName=WidgetProduction" {
+        description = ""
+        environment = ["development"]
     }
 }
