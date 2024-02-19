@@ -44,7 +44,7 @@ step "flyway-database-migrations" {
 
         container {
             feed = "dockerhub"
-            image = "octopuslabs/flyway-workertools:10.8.1-ubuntu.2204"
+            image = "octopuslabs/flyway-workertools:10.8.1"
         }
 
         packages "Flyway.Package.Value" {
