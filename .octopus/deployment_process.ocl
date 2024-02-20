@@ -19,7 +19,7 @@ step "create-dry-run-container" {
         action_type = "Octopus.Script"
         properties = {
             Octopus.Action.GitRepository.Source = "Project"
-            Octopus.Action.Script.ScriptFileName = "#{Octopus.Project.Git.BasePath}/CreateImageRunBook/CreateDbEnvironment_1_RgcloneCreateDc.sh"
+            Octopus.Action.Script.ScriptFileName = "#{Octopus.Project.Git.BasePath}/CreateImageRunBook/CreateDbEnvironment_1_RgcloneCreateDc.ps1"
             Octopus.Action.Script.ScriptSource = "GitRepository"
         }
         worker_pool = "hosted-ubuntu"
