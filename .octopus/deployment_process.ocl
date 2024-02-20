@@ -26,47 +26,6 @@ step "create-dry-run-container" {
     }
 }
 
-step "dry-run-deployment" {
-    name = "Dry Run Deployment"
-
-    action {
-        properties = {
-            Flyway.Authentication.Method = "usernamepassword"
-            Flyway.Command.BaseLineOnMigrate = "false"
-            Flyway.Command.FailOnDrift = "true"
-            Flyway.Command.Locations = "filesystem:#{Octopus.Action.Package[Flyway.Package.Value].ExtractedPath}/migrations"
-            Flyway.Command.OutOfOrder = "false"
-            Flyway.Command.SkipExecutingMigrations = "false"
-            Flyway.Command.Target = "latest"
-            Flyway.Command.Value = "migrate"
-            Flyway.Executable.Path = "/flyway/flyway"
-            Flyway.License.Key = "#{FLYWAY.LICENCE}"
-            Flyway.Package.Value = "{\"PackageId\":\"alex-yates-redgate/AutoPilotSimulator\",\"FeedId\":\"github\"}"
-            Flyway.Target.Url = "#{OctopusParameters["Octopus.Action[Create dry run container].Output.jdbcConnectionString"}"
-            Octopus.Action.Template.Id = "ActionTemplates-21"
-            Octopus.Action.Template.Version = "13"
-            OctopusUseBundledTooling = "False"
-        }
-        worker_pool = "hosted-ubuntu"
-
-        container {
-            feed = "dockerhub"
-            image = "octopuslabs/flyway-workertools:10.8.1"
-        }
-
-        packages "Flyway.Package.Value" {
-            acquisition_location = "Server"
-            feed = "github"
-            package_id = "alex-yates-redgate/AutoPilotSimulator"
-            properties = {
-                Extract = "True"
-                PackageParameterName = "Flyway.Package.Value"
-                SelectionMode = "deferred"
-            }
-        }
-    }
-}
-
 step "flyway-database-migrations" {
     name = "Flyway Database Migrations"
 
