@@ -1,3 +1,17 @@
+step "set-up-rg-clone-on-agent" {
+    name = "Set up RG Clone on agent"
+
+    action {
+        action_type = "Octopus.Script"
+        properties = {
+            Octopus.Action.GitRepository.Source = "Project"
+            Octopus.Action.Script.ScriptFileName = "#{Octopus.Project.Git.BasePath}/CreateImageRunBook/SetUpRgClone.sh"
+            Octopus.Action.Script.ScriptSource = "GitRepository"
+        }
+        worker_pool = "hosted-ubuntu"
+    }
+}
+
 step "flyway-database-migrations" {
     name = "Flyway Database Migrations"
 
