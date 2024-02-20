@@ -42,7 +42,7 @@ step "dry-run-deploy" {
             Flyway.Executable.Path = "/flyway/flyway"
             Flyway.License.Key = "#{FLYWAY.LICENCE}"
             Flyway.Package.Value = "{\"PackageId\":\"alex-yates-redgate/AutoPilotSimulator\",\"FeedId\":\"github\"}"
-            Flyway.Target.Url = "#{Octopus.Action[Create dry run container].Output.jdbcConnectionString]}"
+            Flyway.Target.Url = "#{Octopus.Action[Create dry run container].Output.jdbcConnectionString}"
             Octopus.Action.Template.Id = "ActionTemplates-21"
             Octopus.Action.Template.Version = "13"
             OctopusUseBundledTooling = "False"
