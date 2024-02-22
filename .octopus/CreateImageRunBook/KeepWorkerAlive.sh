@@ -1,0 +1,1 @@
+echo "Running noop script to keep worker alive"
